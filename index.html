@@ -46,7 +46,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/assets/img/hand.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Hz</a></h1>
@@ -82,13 +82,13 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/wohuangzeng" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1515160558&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="bilibili" target="_blank" href="https://space.bilibili.com/7026667" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="mail" target="_blank" href="mailto:1515160558@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/assets/img/hand.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Hz</h1>
@@ -125,13 +125,13 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/wohuangzeng" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1515160558&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="bilibili" target="_blank" href="https://space.bilibili.com/7026667" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="mail" target="_blank" href="mailto:1515160558@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -184,8 +184,6 @@
     * web中的过滤器：当访问服务器的资源时，过滤器可以将请求拦截下来，完成一些特殊的功能。
     * 过滤器的作用：
         * 一般用于完成通用的操作。如：登录验证、统一编码处理、敏感字符过滤...</code></pre>
-        
-          <a class="article-more-a" href="/2020/06/04/Filter-Listener/#more">more >></a>
         
       
 
@@ -257,81 +255,8 @@
     6. 归并排序
     7. 堆排序
     8. 快速排序
-二. 非比较排序</code></pre><h2 id="一-比较排序"><a href="#一-比较排序" class="headerlink" title="一. 比较排序"></a>一. 比较排序</h2><p>时间复杂度主要在o(n)~o(n²)</p>
-<h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1. 冒泡排序"></a>1. 冒泡排序</h3><pre><code>算法思想：   
-从第一个元素开始，每个相邻的元素都进行比较，将如果前面的元素大于（升序）或小于（降序）后面的元素则进行元素交换，一共遍历数组n-1遍，从而达到排序目的。这个算法的名字由来是越大的数（升序）或越小的数（降序）会经过交换慢慢浮到数组后面。  
-算法步骤（升序）：  
-1. 比较相邻的元素，将较大的元素与其相邻的后面的元素进行交换。
-2. 从数组的最左端依次进行比较交换，直到最大的元素被换到数组的最后面
-3. 往复循环，每一次新的循环屏蔽上一次已经被排好顺序的最大元素。直到没有数字需要进行比较。  </code></pre><p>代码实现如下：   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class Bubble_sort &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] a &#x3D; &#123;2,5,2,4,7,7,6,9,5,76,86,45,76,34,65,76,57&#125;;</span><br><span class="line">        Bubble_sort bubble_sort &#x3D; new Bubble_sort();</span><br><span class="line">        bubble_sort.bubble(a);</span><br><span class="line">        bubble_sort.printArray(a);</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;*</span><br><span class="line">    * 冒泡排序代码实现</span><br><span class="line">    * 平均时间复杂度：o(n²)</span><br><span class="line">    * 最好时间复杂度：o(n²)</span><br><span class="line">    *&#x2F;</span><br><span class="line">    private void bubble(int[] a)&#123;</span><br><span class="line">        for (int i &#x3D; 0;i&lt;a.length;i++)&#123;</span><br><span class="line">            for (int j&#x3D;0;j&lt;a.length-i-1;j++)&#123;</span><br><span class="line">                if (a[j] &gt; a[j+1])&#123;</span><br><span class="line">                    int k &#x3D; a[j+1];</span><br><span class="line">                    a[j+1] &#x3D; a[j];</span><br><span class="line">                    a[j] &#x3D; k;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">       private void printArray(int[] a)&#123;</span><br><span class="line">        for (int i&#x3D;0;i&lt;a.length;i++)&#123;</span><br><span class="line">            System.out.print(a[i]+&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h3><pre><code>算法思想：  
-初始在序列中找到最小的元素（升序）或者最大的元素（降序）然后放到序列的最前端，以此类推，达到整个序列都成为有序的序列。  
-算法步骤（升序）：  
-1. 假设数组的第一个元素为数组的最小值，然后与后边的元素依次进行一个比较，假使碰到比第一个元素小的元素，则交换位置。
-2. 待初始元素排序完成后，把第二个元素看作是数组中最小的元素，然后重复1步骤，最后得到一个排序成功的数组。  </code></pre><p>代码实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] a &#x3D; &#123;2,5,2,4,7,7,6,9,5,76,86,45,76,34,65,76,57&#125;;</span><br><span class="line">        Test test &#x3D; new Test();</span><br><span class="line">        test.select_sort(a);</span><br><span class="line">        test.printArray(a);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;*</span><br><span class="line">    * 选择排序算法实现</span><br><span class="line">    * 平均时间复杂度：o(n²)</span><br><span class="line">    * 最好时间复杂度：o(n²)</span><br><span class="line">    * *&#x2F;</span><br><span class="line">    private void select_sort(int[] a)&#123;</span><br><span class="line">        for(int i&#x3D;0;i&lt;a.length;i++)&#123;</span><br><span class="line">            for (int j&#x3D;i+1;j&lt;a.length;j++)&#123;</span><br><span class="line">                if (a[i]&gt;a[j])&#123;</span><br><span class="line">                    int k &#x3D; a[j];</span><br><span class="line">                    a[j] &#x3D; a[i];</span><br><span class="line">                    a[i] &#x3D;k;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">      private void printArray(int[] a)&#123;</span><br><span class="line">        for (int i&#x3D;0;i&lt;a.length;i++)&#123;</span><br><span class="line">            System.out.print(a[i]+&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-直接插入排序"><a href="#3-直接插入排序" class="headerlink" title="3.直接插入排序"></a>3.直接插入排序</h3><pre><code>算法思想：  
-对于未排序数据(右手抓到的牌)，在已排序序列(左手已经排好序的手牌)中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。  
-算法步骤（升序）：  
-1. 从第一个元素开始，该元素可以认为已经被排序
-2. 取出下一个元素，在已经排序的元素序列中从后向前扫描
-3. 如果该元素（已排序）大于新元素，将该元素移到下一位置
-4. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置
-5. 将新元素插入到该位置后
-6. 重复步骤2~5  </code></pre><p>代码实现：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">        public static void main(String[] args) &#123;</span><br><span class="line">        int[] a &#x3D; &#123;2,5,2,4,7,7,6,9,5,76,86,45,76,34,65,76,57&#125;;</span><br><span class="line">        Test test &#x3D; new Test();</span><br><span class="line">        test.insert_sort(a);</span><br><span class="line">        test.printArray(a);</span><br><span class="line">    &#125;</span><br><span class="line">       &#x2F;*</span><br><span class="line">     插入排序代码实现</span><br><span class="line">     算法思想：从第一个元素开始，默认第一个元素是已经排序完成的元素，后面的元素按照大小次序，依次插入，</span><br><span class="line">     插入时，需要使用一个辅助空间，依次从数组最后一位往前进行比较，如果该元素比待排序的元素大，则将该</span><br><span class="line">     元素往后移动一位，直到遇到比元素小的值，然后插在它后面的位置。</span><br><span class="line">     最好情况：o(n)，本身数组是个升序数组</span><br><span class="line">     最坏情况：o(n2)，本身数组是个降序数组</span><br><span class="line">     *&#x2F;</span><br><span class="line"></span><br><span class="line">    private void insert_sort(int[] a)&#123;</span><br><span class="line">        int j;</span><br><span class="line">        for(int i&#x3D;1;i&lt;a.length;i++)&#123;</span><br><span class="line">            int k &#x3D; a[i];</span><br><span class="line">            for(j&#x3D;i-1;j&gt;&#x3D;0;j--)&#123;</span><br><span class="line">                if (a[j]&gt;k)&#123;</span><br><span class="line">                    a[j+1]&#x3D;a[j];</span><br><span class="line">                &#125;</span><br><span class="line">                else &#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            a[j+1]&#x3D;k;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    private void printArray(int[] a)&#123;</span><br><span class="line">        for (int i&#x3D;0;i&lt;a.length;i++)&#123;</span><br><span class="line">            System.out.print(a[i]+&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-二分插入排序"><a href="#4-二分插入排序" class="headerlink" title="4.二分插入排序"></a>4.二分插入排序</h3><pre><code>对于插入排序，如果比较操作的代价比交换操作大的话，可以采用二分查找法来减少比较操作的次数，我们称为二分插入排序。  </code></pre><p>代码如下：</p>
-<pre><code>public class Test{  
-    public static void main(String[] args) {
-        int[] a = {2,5,2,4,7,7,6,9,5,76,86,45,76,34,65,76,57};
-        Test test = new Test();
-        test.Binary_insertion_sort(a);
-        test.printArray(a);
-    }
-     /*
-    * 二分插入排序算法代码实现
-    *算法思想：与普通的插入排序不同的是，二分插入排序算法，是在左边有序的数组里面利用二分查找来寻找要插入的位置。
-    * 数据结构：数组
-    * 最差时间复杂度：O(n^2)
-    * 最优时间复杂度是O（nlogn）
-    * 平均时间复杂度O(n^2)
-    * 所需辅助空间O（1）
-    * 稳定性：稳定
-    * */
-    private void Binary_insertion_sort(int[] a){
-        for (int i = 1; i&lt;a.length;i++){
-            int left = 0;
-            int right = i-1;
-            int storage = a[i];
-            while (left&lt;=right){
-                int mid = (left+right)/2;
-                if (a[mid]&lt;storage){
-                    left=mid+1;
-                }
-                else {
-                    right=mid-1;
-                }
-            }
-            for (int j=i-1;j&gt;=left;j--){
-                a[j+1]=a[j];
-            }
-            a[left]=storage;
-        }
-    }
-    private void printArray(int[] a){
-        for (int i=0;i&lt;a.length;i++){
-            System.out.print(a[i]+&quot; &quot;);
-        }
-    }
-}</code></pre><h3 id="5-希尔排序"><a href="#5-希尔排序" class="headerlink" title="5. 希尔排序"></a>5. 希尔排序</h3><pre><code>　希尔排序，也叫递减增量排序，是插入排序的一种更高效的改进版本。希尔排序是不稳定的排序算法。
-
-　　希尔排序是基于插入排序的以下两点性质而提出改进方法的：
-
-插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率
-但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位
-　　希尔排序通过将比较的全部元素分为几个区域来提升插入排序的性能。这样可以让一个元素可以一次性地朝最终位置前进一大步。然后算法再取越来越小的步长进行排序，算法的最后一步就是普通的插入排序，但是到了这步，需排序的数据几乎是已排好的了（此时插入排序较快）。
-　　假设有一个很小的数据在一个已按升序排好序的数组的末端。如果用复杂度为O(n^2)的排序（冒泡排序或直接插入排序），可能会进行n次的比较和交换才能将该数据移至正确位置。而希尔排序会用较大的步长移动数据，所以小数据只需进行少数比较和交换即可到正确位置。</code></pre>
+二. 非比较排序</code></pre>
+        
       
 
       
@@ -339,6 +264,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -400,172 +336,8 @@
 2. MVC开发模式
 3. EL表达式
 4. JSTL标签
-5. 三层架构</code></pre><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP:"></a>JSP:</h2><pre><code>1. 指令
-    * 作用：用于配置JSP页面，导入资源文件
-    * 格式：
-        &lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2 ... %&gt;
-    * 分类：
-        1. page        ： 配置JSP页面的
-            * contentType：等同于response.setContentType()
-                1. 设置响应体的mime类型以及字符集
-                2. 设置当前jsp页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
-            * import：导包
-            * errorPage：当前页面发生异常后，会自动跳转到指定的错误页面
-            * isErrorPage：标识当前页面是否是错误页面。
-                * true：是，可以使用内置对象exception
-                * false：否。默认值。不可以使用内置对象exception
-
-
-        2. include    ： 页面包含的。导入页面的资源文件
-            * &lt;%@include file=&quot;top.jsp&quot;%&gt;
-        3. taglib    ： 导入资源
-            * &lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
-                * prefix：前缀，自定义的
-2. 注释:
-    1. html注释：
-        &lt;!-- --&gt;:只能注释html代码片段
-    2. jsp注释：推荐使用
-        &lt;%-- --%&gt;：可以注释所有
-
-
-3. 内置对象
-    * 在jsp页面中不需要创建，直接使用的对象
-    * 一共有9个：
-            变量名                    真实类型                        作用
-        * pageContext                PageContext                    当前页面共享数据，还可以获取其他八个内置对象
-        * request                    HttpServletRequest            一次请求访问的多个资源(转发)
-        * session                    HttpSession                    一次会话的多个请求间
-        * application                ServletContext                所有用户间共享数据
-        * response                    HttpServletResponse            响应对象
-        * page                        Object                        当前页面(Servlet)的对象  this
-        * out                        JspWriter                    输出对象，数据输出到页面上
-        * config                    ServletConfig                Servlet的配置对象
-        * exception                    Throwable                    异常对象</code></pre><h2 id="MVC：开发模式"><a href="#MVC：开发模式" class="headerlink" title="MVC：开发模式"></a>MVC：开发模式</h2><pre><code>1. jsp演变历史
-    1. 早期只有servlet，只能使用response输出标签数据，非常麻烦
-    2. 后来又jsp，简化了Servlet的开发，如果过度使用jsp，在jsp中即写大量的java代码，有写html表，造成难于维护，难于分工协作
-    3. 再后来，java的web开发，借鉴mvc开发模式，使得程序的设计更加合理性
-
-2. MVC：
-    1. M：Model，模型。JavaBean
-        * 完成具体的业务操作，如：查询数据库，封装对象
-    2. V：View，视图。JSP
-        * 展示数据
-    3. C：Controller，控制器。Servlet
-        * 获取用户的输入
-        * 调用模型
-        * 将数据交给视图进行展示
-
-
-    * 优缺点：
-        1. 优点：
-            1. 耦合性低，方便维护，可以利于分工协作
-            2. 重用性高
-
-        2. 缺点：
-            1. 使得项目架构变得复杂，对开发人员要求高</code></pre><h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><pre><code>1. 概念：Expression Language 表达式语言
-2. 作用：替换和简化jsp页面中java代码的编写
-3. 语法：${表达式}
-4. 注意：
-    * jsp默认支持el表达式的。如果要忽略el表达式
-        1. 设置jsp中page指令中：isELIgnored=&quot;true&quot; 忽略当前jsp页面中所有的el表达式
-        2. \${表达式} ：忽略当前这个el表达式
-
-
-5. 使用：
-    1. 运算：
-        * 运算符：
-            1. 算数运算符： + - * /(div) %(mod)
-            2. 比较运算符： &gt; &lt; &gt;= &lt;= == !=
-            3. 逻辑运算符： &amp;&amp;(and) ||(or) !(not)
-            4. 空运算符： empty
-                * 功能：用于判断字符串、集合、数组对象是否为null或者长度是否为0
-                * ${empty list}:判断字符串、集合、数组对象是否为null或者长度为0
-                * ${not empty str}:表示判断字符串、集合、数组对象是否不为null 并且 长度&gt;0
-    2. 获取值
-        1. el表达式只能从域对象中获取值
-        2. 语法：
-            1. ${域名称.键名}：从指定域中获取指定键的值
-                * 域名称：
-                    1. pageScope        --&gt; pageContext
-                    2. requestScope     --&gt; request
-                    3. sessionScope     --&gt; session
-                    4. applicationScope --&gt; application（ServletContext）
-                * 举例：在request域中存储了name=张三
-                * 获取：${requestScope.name}
-
-            2. ${键名}：表示依次从最小的域中查找是否有该键对应的值，直到找到为止。
-
-
-
-            3. 获取对象、List集合、Map集合的值
-                1. 对象：${域名称.键名.属性名}
-                    * 本质上会去调用对象的getter方法
-
-                2. List集合：${域名称.键名[索引]}
-
-                3. Map集合：
-                    * ${域名称.键名.key名称}
-                    * ${域名称.键名[&quot;key名称&quot;]}
-
-
-    3. 隐式对象：
-        * el表达式中有11个隐式对象
-        * pageContext：
-            * 获取jsp其他八个内置对象
-                * ${pageContext.request.contextPath}：动态获取虚拟目录</code></pre><h2 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h2><pre><code>1. 概念：JavaServer Pages Tag Library  JSP标准标签库
-    * 是由Apache组织提供的开源的免费的jsp标签        &lt;标签&gt;
-
-2. 作用：用于简化和替换jsp页面上的java代码        
-
-3. 使用步骤：
-    1. 导入jstl相关jar包
-    2. 引入标签库：taglib指令：  &lt;%@ taglib %&gt;
-    3. 使用标签
-
-4. 常用的JSTL标签
-    1. if:相当于java代码的if语句
-        1. 属性：
-            * test 必须属性，接受boolean表达式
-                * 如果表达式为true，则显示if标签体内容，如果为false，则不显示标签体内容
-                * 一般情况下，test属性值会结合el表达式一起使用
-            2. 注意：
-                * c:if标签没有else情况，想要else情况，则可以在定义一个c:if标签
-    2. choose:相当于java代码的switch语句
-        1. 使用choose标签声明                     相当于switch声明
-        2. 使用when标签做判断                     相当于case
-        3. 使用otherwise标签做其他情况的声明        相当于default
-
-    3. foreach:相当于java代码的for语句
-
-5. 练习：
-    * 需求：在request域中有一个存有User对象的List集合。需要使用jstl+el将list集合数据展示到jsp页面的表格table中</code></pre><h2 id="三层架构：软件设计架构"><a href="#三层架构：软件设计架构" class="headerlink" title="三层架构：软件设计架构"></a>三层架构：软件设计架构</h2><pre><code>1. 界面层(表示层)：用户看的得界面。用户可以通过界面上的组件和服务器进行交互
-2. 业务逻辑层：处理业务逻辑的。
-3. 数据访问层：操作数据存储文件。</code></pre><h2 id="案例：用户信息列表展示"><a href="#案例：用户信息列表展示" class="headerlink" title="案例：用户信息列表展示"></a>案例：用户信息列表展示</h2><pre><code>1. 需求：用户信息的增删改查操作
-2. 设计：
-    1. 技术选型：Servlet+JSP+MySQL+JDBCTempleat+Duird+BeanUtilS+tomcat
-    2. 数据库设计：
-        create database day17; -- 创建数据库
-        use day17;                -- 使用数据库
-        create table user(   -- 创建表
-            id int primary key auto_increment,
-            name varchar(20) not null,
-            gender varchar(5),
-            age int,
-            address varchar(32),
-            qq    varchar(20),
-            email varchar(50)
-        );
-
-3. 开发：
-    1. 环境搭建
-        1. 创建数据库环境
-        2. 创建项目，导入需要的jar包
-
-    2. 编码
-
-
-4. 测试
-5. 部署运维</code></pre>
+5. 三层架构</code></pre>
+        
       
 
       
@@ -630,8 +402,6 @@
         <h1 id="内容："><a href="#内容：" class="headerlink" title="内容："></a>内容：</h1><pre><code>1. Servlet
 2. HTTP协议
 3. Request</code></pre>
-        
-          <a class="article-more-a" href="/2020/04/03/Servlet%20%20&&%20HTTP%E5%8D%8F%E8%AE%AE-Request/#more">more >></a>
         
       
 
@@ -700,8 +470,6 @@
 2.Response对象
 3.ServletContext对象</code></pre>
         
-          <a class="article-more-a" href="/2020/04/03/Response%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
       
 
       
@@ -767,8 +535,6 @@
 2.Session
 3.JSP入门了解</code></pre>
         
-          <a class="article-more-a" href="/2020/04/03/Cookie%20&&%20Session%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
       
 
       
@@ -833,8 +599,6 @@
         <h1 id="LeetCode刷题记录"><a href="#LeetCode刷题记录" class="headerlink" title="LeetCode刷题记录:"></a>LeetCode刷题记录:</h1><h2 id="1189-”气球”的最大数量"><a href="#1189-”气球”的最大数量" class="headerlink" title="1189.”气球”的最大数量"></a>1189.”气球”的最大数量</h2><pre><code>给你一个字符串 text，你需要使用 text 中的字母来拼凑尽可能多的单词 &quot;balloon&quot;（气球）。
 字符串 text中的每个字母最多只能被使用一次。
 请你返回最多可以拼凑出多少个单词 &quot;balloon&quot;。</code></pre>
-        
-          <a class="article-more-a" href="/2020/04/03/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/#more">more >></a>
         
       
 
@@ -968,6 +732,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1014,34 +782,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
     
     	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
   		
     	</section>
     
